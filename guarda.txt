@@ -1,0 +1,27 @@
+const   cardapio = require("../cardapio");
+
+function execute(){
+
+    let menu    =   "Cardapior";
+    Object.keys(cardapio.menu).forEach((value)=>{
+        let element =cardapio.menu[value];
+        menu += `${element} = ${element.name} - ${element.ingredients} - ${element.price}`;
+    })
+
+    return ["Olá sou o assistente virtual da inbit me chamo Bit \n Seja bem vindo ao nosso restaurante",menu];
+}
+exports.execute = execute;
+
+  function start(client) {
+    client.onMessage((message) => {
+      let resp  =  stages.step[getStage(message.from)].obj.execute();
+      for (let index = 0; index < Array(resp).length; index++) {
+        const element = Array(resp)[index];
+        client.sendText( 
+          message.from,
+          element  
+        );
+      }
+      
+    });
+  }

@@ -1,0 +1,6 @@
+-- Boas vindas
+-- Apresentar cardapio
+-- Resumo do pedido 
+-- confirma compra
+-- Solicitar endereço de entrega
+-- Encerrar contato com o cliente
